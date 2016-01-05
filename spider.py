@@ -3,6 +3,7 @@
 
 import urllib2
 import threading
+import codecs
 from time import ctime
 from bs4 import BeautifulSoup
 
@@ -12,9 +13,11 @@ def spider(i):
     url = 'http://datacenter.mep.gov.cn/report/air_daily/air_dairy.jsp?city=%E6%AD%A6%E6%B1%89%E5%B8%82&startdate=2015-07-01&enddate=2015-12-31&page=' + i
     html = urllib2.urlopen(url)
     soup = BeautifulSoup(html, "html.parser")
-    all = soup.find_all('td', 'report1_2')
+    all = soup.find_all('td', 'report1_7')
+    # fo = codecs.open("data.txt", "a", "utf-8")
     for one in all:
         print one.text
+        # fo.write(one.text + "\n")
 
 
 # 单线程
