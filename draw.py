@@ -61,16 +61,17 @@ def draw_rank(month):
     ax = axes([0.1, 0.1, 0.6, 0.8])
 
     # 饼图的lables
-    labels = '43%', '7%', '43%', '7%'
+
+    labels = static.rank(month)
 
     # 饼图所分成的区域
-    fracs = [6, 1, 6, 1]
+    fracs = [i * 10 for i in static.rank(month)]
 
     # 按分成的区域画饼图 并加上lables
     pie(fracs, labels=labels)
 
     # loc=5为在右侧后面是在针对坐标轴的位置
-    legend((u"在理想范围以上: 6", u"在理想范围以下: 1", u"在理想范围内:   6", u"低血糖:         1"), loc=5,
+    legend((u"优", u"良", u"轻度污染", u"中度污染", u'重度污染', u'严重污染'), loc=4,
            bbox_to_anchor=(1.5, 0.5))
 
     # text针对坐标轴的坐标
@@ -81,6 +82,29 @@ def draw_rank(month):
     show()
 
 
+def draw_num():
+    # 计算每周平均 AQI 指数
+    print static.num()
+
+    x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+    y = static.num()
+
+    plt.plot(x, y)
+    plt.show()
+
+
 if __name__ == '__main__':
-    # draw_pollutant()
+    # 折线图 -- 每周平均 AQI 指数
+    draw_num()
+
+    # 饼状图 -- 每月及半年的空气质量等级的相对比例
     draw_rank(7)
+    draw_rank(8)
+    draw_rank(9)
+    draw_rank(10)
+    draw_rank(11)
+    draw_rank(12)
+    draw_rank(0)
+
+    # 柱状图 -- 每月首要污染物的出现天数
+    draw_pollutant()
