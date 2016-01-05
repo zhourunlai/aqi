@@ -13,15 +13,14 @@ curs = conn.cursor()
 curs.execute("CREATE DATABASE aqi")
 
 # 选择连接哪个数据库
-conn.select_db('data')
+conn.select_db('aqi')
 
 # 执行SQL,创建一个表
-curs.execute(
-        "CREATE TABLE data(id INT PRIMARY KEY,city VARCHAR (50)),datetime VARCHAR(50),index INT,rank INT,pollutant INT")
+curs.execute("CREATE TABLE `aqi_data` (`id` int(11) NOT NULL,`city` int(11) NOT NULL,`datetime` date NOT NULL,`num` int(11) NOT NULL,`rank` int(11) NOT NULL,`pollutant` int(11) NOT NULL)")
 
 # 插入一条记录
 value = [1, "武汉市", "2015-12-31", 159, 4, 1]
-curs.execute("INSERT INTO test VALUES (%s,%s,%s,%s,%s,%s)", value)
+curs.execute("INSERT INTO `aqi_data` VALUES (%s,%s,%s,%s,%s,%s)", value)
 
 # # 插入多条记录
 # values = []
