@@ -13,4 +13,10 @@
 |-- static.py -- 统计分析数据接口文件
 `-- tkinter.py -- GUI界面
 
-![image](https://github.com/zhourunlai/aqi/tree/master/screenshot/run-spider.png)
+![image](https://raw.githubusercontent.com/zhourunlai/aqi/master/screenshot/run-spider.png)
+
+![image](https://raw.githubusercontent.com/zhourunlai/aqi/master/screenshot/run-draw-num.png)
+
+![image](https://raw.githubusercontent.com/zhourunlai/aqi/master/screenshot/run-draw-rank.png)
+
+![image](https://raw.githubusercontent.com/zhourunlai/aqi/master/screenshot/run-draw-polluent.png)
