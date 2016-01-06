@@ -12,3 +12,5 @@
 |-- spider.py -- 爬虫文件
 |-- static.py -- 统计分析数据接口文件
 `-- tkinter.py -- GUI界面
+
+![image](https://github.com/zhourunlai/aqi/tree/master/screenshot/run-spider.png)
